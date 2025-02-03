@@ -128,11 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DeltaTime.cpp" />
     <ClCompile Include="ECS.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DeltaTime.h" />
     <ClInclude Include="ECS.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="SparseSet.h" />
