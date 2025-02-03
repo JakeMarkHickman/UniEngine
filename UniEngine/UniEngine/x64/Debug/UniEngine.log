@@ -1,2 +1,3 @@
-﻿  ECS.cpp
-  UniEngine.vcxproj -> C:\Users\h017269l\source\repos\UniEngine\x64\Debug\UniEngine.exe
+﻿  main.cpp
+C:\Users\h017269l\Documents\GitHub\UniEngine\UniEngine\UniEngine\main.cpp(22,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  UniEngine.vcxproj -> C:\Users\h017269l\Documents\GitHub\UniEngine\UniEngine\x64\Debug\UniEngine.exe
