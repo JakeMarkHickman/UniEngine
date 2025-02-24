@@ -11,30 +11,79 @@ struct Transform
 	float x, y, z;
 };
 
-void TransformSystem(ECS& ecs, float deltaTime)
+void anyTransformSystem(anyECS& ecs, float deltaTime)
 {
 	for (int i = 0; i < ecs.GetAllEntities().size(); i++)
 	{
-		std::cout << deltaTime << "\n";
+		if (ecs.HasComponents<Transform>(i))
+		{
+			Transform transform = ecs.GetComponent<Transform>(i);
+
+			transform.x += 5;
+
+			ecs.SetComponent<>(i, transform);
+		}
+	}
+}
+
+void memoryTransformSystem(memoryECS& ecs, float deltaTime)
+{
+	for (int i = 0; i < ecs.GetAllEntities().size(); i++)
+	{
+		if (ecs.HasComponents<Transform>(i))
+		{
+			Transform* transform = ecs.GetComponent<Transform>(i);
+
+			transform->x += 5;
+
+		}
 	}
 }
 
 void main()
 {
-	ECS ecs;
+	bool memorypool = false;
+	int entityAmount = 10000;
+
 	DeltaTime time;
 
-	for (int i = 0; i < 10000; i++)
+	if (memorypool)
 	{
-		uint64_t ent = ecs.CreateEntity();
-		ecs.AttachComponents(ent, Transform(1.0f, 0.0f, 1.0f));
+		memoryECS ecs;
+
+		for (int i = 0; i < entityAmount; i++)
+		{
+			uint64_t ent = ecs.CreateEntity();
+			ecs.AttachComponent(ent, Transform(1.0f, 0.0f, 1.0f));
+		}
+
+
+		ecs.AddSystem(memoryTransformSystem);
+
+		while (true)
+		{
+			float delta = time.CalculateDeltaTime();
+			std::cout << delta << "\n";
+			ecs.UpdateSystems(delta);
+		}
 	}
-
-	ecs.AddSystem(TransformSystem);
-
-	while (true)
+	else
 	{
-		float delta = time.CalculateDeltaTime();
-		ecs.UpdateSystems( delta );
+		anyECS ecs;
+
+		for (int i = 0; i < entityAmount; i++)
+		{
+			uint64_t ent = ecs.CreateEntity();
+			ecs.AttachComponents(ent, Transform(1.0f, 0.0f, 1.0f));
+		}
+
+		ecs.AddSystem(anyTransformSystem);
+
+		while (true)
+		{
+			float delta = time.CalculateDeltaTime();
+			std::cout << delta << "\n";
+			ecs.UpdateSystems(delta);
+		}
 	}
 }

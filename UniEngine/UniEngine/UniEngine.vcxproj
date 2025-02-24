@@ -132,11 +132,13 @@
     <ClCompile Include="ECS.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="memoryPool.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DeltaTime.h" />
     <ClInclude Include="ECS.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="memoryPool.h" />
     <ClInclude Include="SparseSet.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

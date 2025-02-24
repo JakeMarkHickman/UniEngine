@@ -27,6 +27,9 @@
     <ClCompile Include="DeltaTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="memoryPool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ECS.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DeltaTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memoryPool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

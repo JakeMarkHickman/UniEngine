@@ -1,3 +1,5 @@
 ﻿  main.cpp
-C:\Users\h017269l\Documents\GitHub\UniEngine\UniEngine\UniEngine\main.cpp(22,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\h017269l\Documents\GitHub\UniEngine\UniEngine\UniEngine\main.cpp(43,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\h017269l\Documents\GitHub\UniEngine\UniEngine\UniEngine\ECS.h(114,45): warning C4101: 'e': unreferenced local variable
+C:\Users\h017269l\Documents\GitHub\UniEngine\UniEngine\UniEngine\ECS.h(122,1): warning C4715: 'anyECS::GetComponent<Transform>': not all control paths return a value
   UniEngine.vcxproj -> C:\Users\h017269l\Documents\GitHub\UniEngine\UniEngine\x64\Debug\UniEngine.exe
